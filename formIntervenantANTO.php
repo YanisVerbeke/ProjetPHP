@@ -29,6 +29,7 @@
           }
         }
     ?>
+    
   </head>
   <body>
 
@@ -72,8 +73,6 @@
 
       $tabPers[]=$pers;
       var_dump($pers);
-        
-        
       ?>
 
   </body>
