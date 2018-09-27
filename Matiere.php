@@ -1,18 +1,19 @@
 <?php 
 	class Matiere {
 		private $nomMatiere;
+		private $intervenant;
 		private $desciption;
 		private $date;
-		private $intervenant
-
+		
 		public function __construct($myNom, $myDesc, $myDate, $myinter) {
 			$this->nomMatiere = $myNom;
+			$this->intervenant = $myinter;
 			$this->description = $myDesc;
 			$this->date = $myDate;
-			$this->intervenant = $myinter
+			
 		}
 		public function getAllInfo() {
-			$tabInfo = [$this->nomMatiere, $this->description, $this->date, $this->intervenant];
+			$tabInfo = [$this->nomMatiere, $this->intervenant, $this->description, $this->date];
 			return $tabInfo;
 			echo '$tabInfo';
 		}
