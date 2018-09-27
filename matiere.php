@@ -21,17 +21,17 @@
 		<a href="index.html">
         	<img src="Image/logo2.png" alt="" height="35px" class="menu" style="margin-top: 6px">
 		</a>
-		<div class="dn">
-            <div class="menu menu1 surv surv:hover" style="margin-left: 250px">
-                <a href="..." class="menu3"><p class="menu2">ACCUEIL</p></a>
-            </div>
-            <div class="menu menu1 surv surv:hover">
-                <a href="..." class="menu3"><p class="menu2">CALENDRIER</p></a>
-            </div>
-            <div class="menu menu1 surv surv:hover">
-                <a href="..." class="menu3"><p class="menu2">INTERVENANT</p></a>
-            </div>
+        
+        <div class="button button1 button1:hover" style="margin-left: 20px">
+            <a href="accueil.html" class="button button1 button1:hover"><p>Accueil</p></a>
         </div>
+        <div class="button button1 button1:hover" style="margin-left: 20px">
+            <a href="formulaire.php" class="button button1 button1:hover"><p>Formulaire</p></a>
+        </div>
+        <div class="button button1 button1:hover" style="margin-left: 20px">
+            <a href="matiere.php" class="button button1 button1:hover"><p>Matière</p></a>
+        </div>
+
     </div>
 
     <!-- Fin Menu -->
