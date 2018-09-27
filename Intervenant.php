@@ -14,24 +14,19 @@
 			$this->site = $mySite;
 		}
 		public function getNom() {
-			return $this->nom;
+		return $this->nom;
 		}
 		public function getPrenom() {
-			return $this->prenom;
+		return $this->prenom;
 		}
 		public function getMail() {
-			return $this->mail;
+		return $this->mail;
 		}
 		public function getTel() {
-			return $this->tel;
+		return $this->tel;
 		}
 		public function getSite() { 
-			return $this->site;
+		return $this->site;
 	}
-		public function getAllInfo() {
-			$tabInfo = [$this->nom, $this->prenom, $this->mail, $this->tel, $this->site];
-			return $tabInfo;
-			//var_dump($tabInfo);
-		}
 	}
 ?>
