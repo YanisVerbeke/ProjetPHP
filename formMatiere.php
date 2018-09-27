@@ -14,10 +14,10 @@
 		<form method="post">
 
 		<?php 
-		$formMatiere->input('input', 'Nom', 'text');
-		$formMatiere->input('input', 'Intervenant', 'text');
-		$formMatiere->input('textarea', 'Description', 'text');
-		$formMatiere->input('input', 'Date', 'date');
+		$formMatiere->input('input', 'Nom', 'text', 'class');
+		$formMatiere->input('input', 'Intervenant', 'text', 'class');
+		$formMatiere->input('textarea', 'Description', 'text', 'class');
+		$formMatiere->input('input', 'Date', 'date', 'class');
 		$formMatiere->submit();
 		?>
 
