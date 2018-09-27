@@ -17,21 +17,20 @@
     <!-- Menu -->
 
     <div class="bd">
-
-		<a href="index.html">
-        	<img src="Image/logo2.png" alt="" height="35px" class="menu" style="margin-top: 6px">
+        <a href="index.html">
+            <img src="Image/logo2.png" alt="" height="35px" class="menu" style="margin-top: 6px">
         </a>
-        
-		<div class="button button1 button1:hover" style="margin-left: 20px">
-            <a href="accueil.html" class="button button1 button1:hover"><p>Accueil</p></a>
+        <div class="dn">
+            <div class="menu menu1 surv surv:hover" style="margin-left: 250px">
+                <a href="index.html" class="menu3"><p class="menu2">ACCUEIL</p></a>
+            </div>
+            <div class="menu menu1 surv surv:hover">
+                <a href="formulaire.php" class="menu3"><p class="menu2">INTERVENANT</p></a>
+            </div>
+            <div class="menu menu1 surv surv:hover">
+                <a href="matiere.php" class="menu3"><p class="menu2">MATIERE</p></a>
+            </div>
         </div>
-        <div class="button button1 button1:hover" style="margin-left: 20px">
-            <a href="formulaire.php" class="button button1 button1:hover"><p>Formulaire</p></a>
-        </div>
-        <div class="button button1 button1:hover" style="margin-left: 20px">
-            <a href="matiere.php" class="button button1 button1:hover"><p>Matière</p></a>
-        </div>
-        
     </div>
 
     <!-- Fin Menu -->
@@ -41,7 +40,7 @@
 
     <!-- Formulaire -->
     
-    <div class="contform">
+    <div class="contform" style="margin-bottom: 110px">
 
         <div>
             <h1 style="color: #464646">
@@ -66,6 +65,7 @@
                     <input type="submit" name="send" value="Envoyer" class="button button1 button1:hover">
               </form> 
         </div>
+
     </div> 
 
     <!-- Fin Formulaire -->
