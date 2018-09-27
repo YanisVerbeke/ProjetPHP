@@ -1,6 +1,5 @@
 <?php
 
-
 class Connexion
 {
 	private $type;
@@ -23,7 +22,6 @@ class Connexion
 	{
 		try{
 			$this->db = new PDO($this->type.':host='.$this->host.';dbname='.$this->dbname,$this->username, $this->password);
-			//"mysql:host=localhost:8888;dbname=test_intervenant"
 		}catch (PDOException $e){
 			print "Échec de connection à la base de données !";
 			die();
@@ -35,29 +33,34 @@ class Connexion
 		$tab = $buffer->fetchAll();
 
 		echo '<table>';
-		echo '<tr id="keyLine">';
-		for ($i=0; $i < sizeof($tabId); $i++) {
-			echo '<th>'.$tabId[$i].'</th>';
+		echo '<tr id="key">';
+
+		for ($i=0; $i < sizeof($tab[0])/2; $i += 1) {
+			echo "<td>";
+			$key = array_search($tab[0][$i], $tab[0]);
+			echo $key;
+			echo "</td>";
 		}
 		echo '</tr>';
-		for($i = 0; $i < sizeof($tab); $i++){
-			if($i % 2 != 0){
-				$color = "grey";
+		for($i = 0; $i < sizeof($tab[$i])/2; $i++){
+			if(!isset($tab[$i])){
+				break;
 			}else{
-				$color = "white";
-			}
-			for($j = 0; $j < sizeof($tabId); $j++){
-				//var_dump($tab[$i][$tabId[$j]]);
+				if($i % 2 != 0){
+					$color = "grey";
+				}else{
+					$color = "white";
+				}
+
 				echo '<tr class="'.$color.'">';
-				for ($j=0; $j < sizeof($tab); $j++) {
+				for ($j=0; $j < sizeof($tab[$i])/2; $j++) {
 					echo '<td class="case">'.$tab[$i][$j].'</td>';
 				}
 				echo '</tr>';
 			}
-			echo '</table>';
 		}
+		echo '</table>';
 	}
-		//var_dump($tab[0]['name']);
 	public function createEntry($table,$tabId,$tabVal)
 	{
 		$length = sizeof($tabId);
