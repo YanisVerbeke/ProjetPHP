@@ -9,29 +9,11 @@
         <link href="https://fonts.googleapis.com/css?family=Antic+Slab" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     
-        <title>Formulaire</title>      
+        <title>Formulaire</title>
         
     </head>
     <body>
         
-    <!-- Menu -->
-
-    <div class="bd">
-		<a href="index.html">
-        	<img src="Image/logo2.png" alt="" height="35px" class="menu" style="margin-top: 6px">
-		</a>
-		<div class="dn">
-            <div class="menu menu1 surv surv:hover" style="margin-left: 250px">
-                <a href="index.html" class="menu3"><p class="menu2">ACCUEIL</p></a>
-            </div>
-            <div class="menu menu1 surv surv:hover">
-                <a href="formIntervenant.php" class="menu3"><p class="menu2">INTERVENANT</p></a>
-            </div>
-            <div class="menu menu1 surv surv:hover">
-                <a href="formMatiere.php" class="menu3"><p class="menu2">MATIERE</p></a>
-            </div>
-        </div>
-    </div>
 
     <!-- Fin Menu -->
 
@@ -47,18 +29,14 @@
                 Formulaire 
             </h1>
         </div>
-
-        <div class="button button1 button1:hover" style="margin-left: 20px">
-            <a href="index.html" class="button button1 button1:hover"><p>Accueil</p></a>
-        </div>
-        <div class="button button1 button1:hover" style="margin-left: 20px">
-            <a href="formulaire.php" class="button button1 button1:hover"><p>Intervenant</p></a>
-        </div>
-        <div class="button button1 button1:hover" style="margin-left: 20px">
-            <a href="matiere.php" class="button button1 button1:hover"><p>Matière</p></a>
-        </div>
-
-    </div> 
+<div class="look" id="myTopnav">
+  <a href="index.html" class="active">Acceuil</a>
+  <a href="formulaire.php">Intervenant</a>
+  <a href="#contact">Matiere</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
 
     <!-- Fin Formulaire -->
 
@@ -82,6 +60,16 @@
     </footer>
     
     <!-- Fin Bas de Page-->
+    <script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
     
 </body>
 </html>
