@@ -1,0 +1,6 @@
+.case{
+	border: solid 1px black;
+}
+.grey, #key{
+	background-color: lightgrey;
+}
