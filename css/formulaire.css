@@ -1,0 +1,278 @@
+﻿/* Font */
+
+body{
+    font-family: 'PT Sans', sans-serif;
+    width : 100%;
+    padding: 0;
+    margin: 0;
+    
+}
+
+    body h1, body h2, body h3, body h4, body h5, body h5{
+        font-family: 'Antic Slab', sans-serif;
+}
+
+header h1{
+    text-align: center;
+    color:#000;
+}
+
+
+/* -- Bandeau -- */
+
+.bd {
+    margin-top: -10px;
+    margin-bottom: -10px;
+    padding: 20px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+}
+.menu {
+    float: left;
+    display: flex;
+}
+
+.menu1 {
+    color: #da0000;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: -4px;
+}
+
+.menu2 {
+	color: #da0000;
+}
+
+.menu3 {
+	text-decoration: none;
+}
+
+.surv {
+	border-top: 2px solid #fff;
+	/* transition quand la souris quitte l'élément */
+	transition: border-color 0,4s;
+}
+
+.surv:hover {
+	border-top: 2px solid #da0000;
+	/* transition quand la souris survole */
+	transition: all 2s;
+}
+
+.slide {
+    background-color: black;
+}
+
+.main {
+    margin-top: -20px;
+    margin-bottom: 50px;
+    margin-left: 150px;
+    margin-right: 150px;
+    padding: 20px;
+}
+
+/* -- Formulaire -- */
+
+.contform {
+    background-color: #D8D8D8;
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 75px;
+    margin-left: 30%;
+    margin-right: 30%;
+	padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+#ui-datepicker-div{
+	background-color: gainsboro;
+	border-radius: 7px;
+}
+
+.trait{
+    border-top: 1px solid #636363;
+}
+
+.qx2 {
+    float: right;
+    display: flex;
+    margin-right: 40px;
+
+}
+
+.qx {
+    background-color: #ffffff;
+    border-color: #636363;
+    height: 30px;
+    width: 225px;
+    border-radius: 6px;
+	
+    border: 0px;
+    text-align: center;
+}
+
+.qx:checked {
+    background-color: #000;
+    border-color: #000;
+	transition-duration: 0.4s;
+}
+
+.qx1 {
+    background-color: #ffffff;
+    border-color: #636363;
+    height: 120px;
+    width: 225px;
+    border-radius: 6px;
+	
+	border: 0px;
+}
+
+.button {
+    height: 30px;
+	width: 125px;
+	border: 10px;
+	border-radius: 7px;
+	background-color: #C9C9C9;
+	
+}
+
+.button1 {
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.button1:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.button2 {
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.button2:hover {
+    background-color: #f44336; /* Red */
+    color: white;
+}
+
+
+
+  @media screen and (min-width: 470px) and (max-width: 920px) {
+    .contform {
+        margin-top: 75px;
+        margin-bottom: 75px;
+        margin-left: 90px;
+        margin-right: 90px;
+        padding-top: 20px;
+        padding-bottom: 40px;
+
+    }   
+
+    .dn {
+        display: none;
+
+    }
+
+    .bd {
+        align-items: center;
+    }
+
+  }
+
+  @media screen and (max-width: 470px) {
+    .contform  {
+      margin: 10px;
+      margin-bottom: 50px;
+    }
+
+    .dn {
+        display: none;
+    }
+
+    .bd {
+        align-items: center;
+    }
+  }
+.backgr  {
+        max-width: 100%;
+    height: auto;
+      
+    }
+  @media screen and (min-width: 920px) {
+    
+  }
+
+  @media screen and (max-width: 920px) {
+    .backgr  {
+      display: none;
+      
+    }
+  }
+
+
+  header h1{
+    text-align: center;
+    color:#000;
+}
+  
+/* Footer */
+
+footer p{
+    color : #8c8989;
+    text-align: center;
+}
+
+footer p span {
+    color :#CC201C;
+}
+
+footer .footerimg1 {
+    text-align: center;
+    margin-top: 50px;
+    width: 80%;
+}
+footer .footerimg2 {
+ 
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+footer .section_footer_colored{
+    width: 100%;
+    height: auto;
+    padding: 8px 0 25px 0;
+    background-color:#282a2b;
+}
+
+footer .section_footer_colored a {
+    text-decoration: none;
+    color : #bfbfbf;
+}
+
+footer .mention_padding{
+    padding-top: 30px;
+}
+
+footer .linkfooter{
+    color: inherit;
+    transition: all 0.5s ease;
+}
+
+footer .linkfooter:hover{
+
+    color: #CC201C;
+    
+}
+
+.fab{
+    font-size: 25px;
+    margin: 8px;
+}
+
+.fa-facebook{color: #3b5998 ;}
+.fa-twitter{color: #55acee ;}
+.fa-linkedin-in{color: #0077b5 ;}
+.fa-instagram{color: #3f729b ;}
+
