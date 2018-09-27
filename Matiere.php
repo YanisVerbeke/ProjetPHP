@@ -5,7 +5,7 @@
 		private $desciption;
 		private $date;
 		
-		public function __construct($myNom, $myDesc, $myDate, $myinter) {
+		public function __construct($myNom, $myinter, $myDesc, $myDate) {
 			$this->nomMatiere = $myNom;
 			$this->intervenant = $myinter;
 			$this->description = $myDesc;

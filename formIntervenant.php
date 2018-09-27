@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        
-        <link rel="stylesheet" href="./css/formulaire.css" />
-        
-        <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Antic+Slab" rel="stylesheet">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    
-        <title>Formulaire</title>      
-        
+		<meta charset="utf-8">    
+		<link rel="stylesheet" href="./css/formulaire.css" />   
+		<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Antic+Slab" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+		<title>Ajouter un intervenant</title>
     </head>
     <body>
         
@@ -45,10 +41,27 @@
                 Formulaire 
             </h1>
         </div>
-
+				<?php 
+				require "Form.php";
+				require "Intervenant.php";
+				$formIntervenant = new Form();
+				?>
+				
         <div style="margin: 10px">
-            <form action="/formulaire.php" method="POST">
-                    Nom :<br><br>
+            <form method="post">
+				
+				<?php 
+				$formIntervenant->input('input', 'Nom', 'text', '', 'qx');
+				$formIntervenant->input('input', 'Prenom', 'text', '', 'qx');
+				$formIntervenant->input('input', 'Mail', 'text', '', 'qx');
+				$formIntervenant->input('input', 'Telephone', 'text', '', 'qx');
+				$formIntervenant->input('input', 'Pontoise', 'checkbox', '1', 'qx');
+				$formIntervenant->input('input', 'Champeret', 'checkbox', '2', 'qx');
+				$formIntervenant->submit();
+				?>
+			
+			
+            <!--        Nom :<br><br>
                     <input type="text" name="firstname" value="" class="qx"><br><br>
                     Prénom :<br><br>
                     <input type="text" name="lastname" value="" class="qx"><br><br>
@@ -61,12 +74,28 @@
                     <input type="checkbox" name="int" value="champeret" >Champeret<br><br><br>
                     
                     <input type="submit" name="send" value="Envoyer" class="button button1 button1:hover">
-              </form> 
+              
+			  -->
+			  
+			  
+			  </form> 
         </div>
 
     </div> 
 
     <!-- Fin Formulaire -->
+	
+	<?php 
+		if(!(isset($_POST))) {
+			$tab = $_POST;
+			$nom = $tab['Nom'];
+			$prenom = $tab['Prenom'];
+			$mail = $tab['Mail'];
+			$telephone = $tab['Telephone'];
+
+			$intervenant = new Intervenenant($nom, $prenom, $mail, $telephone);
+		}
+		?>
 
     <!-- Bas de Page -->
 		
