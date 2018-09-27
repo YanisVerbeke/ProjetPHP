@@ -9,7 +9,7 @@
         <link href="https://fonts.googleapis.com/css?family=Antic+Slab" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     
-        <title>Formulaire</title>      
+        <title>Matière</title>      
         
     </head>
     <body>
@@ -45,23 +45,18 @@
 
         <div>
             <h1 style="color: #464646">
-                Formulaire 
+                Matière 
             </h1>
         </div>
 
         <div style="margin: 10px">
             <form action="/formulaire.php" method="POST">
-                    Nom :<br><br>
+                    Intitulé :<br><br>
                     <input type="text" name="firstname" value="" class="qx"><br><br>
-                    Prénom :<br><br>
-                    <input type="text" name="lastname" value="" class="qx"><br><br>
-                    Mail :<br><br>
+                    Description :<br><br>
+                    <input type="textarea" name="lastname" value="" class="qx"><br><br>
+                    Date :<br><br>
                     <input type="text" name="mail" value="" class="qx"><br><br>
-                    Téléphone :<br><br>
-                    <input type="text" name="tel" value="" class="qx"><br><br>
-                    Lieu d'intervention :<br><br>
-                    <input type="checkbox" name="int" value="cergy" checked>Pontoise
-                    <input type="checkbox" name="int" value="champeret" >Champeret<br><br><br>
                     
                     <input type="submit" name="send" value="Envoyer" class="button button1 button1:hover">
               </form> 
