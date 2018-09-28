@@ -11,7 +11,6 @@
 			$this->prenom = $myPrenom;
 			$this->mail = $myMail;
 			$this->tel = $myTel;
-			//$this->site = $mySite;
 		}
 		public function getNom() {
 			return $this->nom;
@@ -27,11 +26,10 @@
 		}
 		public function getSite() { 
 			return $this->site;
-	}
+		}
 		public function getAllInfo() {
 			$tabInfo = [$this->nom, $this->prenom, $this->mail, $this->tel, $this->site];
 			return $tabInfo;
-			//var_dump($tabInfo);
 		}
 	}
 ?>

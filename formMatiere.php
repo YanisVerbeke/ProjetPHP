@@ -33,58 +33,54 @@
 
     <!-- Fin Menu -->
 
-    <div class="trait">
-    </div>
+    <div class="trait"></div>
 
     <!-- Formulaire -->
     
     <div class="contform" style="margin-bottom: 110px">
-
         <div>
             <h1 style="color: #464646">
                 Formulaire 
             </h1>
         </div>
 			<?php 
-			require "Form.php";
-			require "Matiere.php";
-			require "connexion.php";
-			$formMatiere = new Form();
+				require "Form.php";
+				require "Matiere.php";
+				require "connexion.php";
+				$formMatiere = new Form();
 			?>
 			
 		<div style="margin: 10px">
-		<form method="GET">
+			<form method="GET">
 
-		<?php 
-		$formMatiere->input('input', 'Nom', 'text', '', 'qx');
-		$formMatiere->input('input', 'Intervenant', 'text', '', 'qx');
-		$formMatiere->input('textarea', 'Description', 'text', '', 'qx');
-		$formMatiere->input('input', 'Date', 'date', '', 'qx');
-		$formMatiere->submit();
-		?>
+				<?php 
+					$formMatiere->input('input', 'Nom', 'text', '', 'qx');
+					$formMatiere->input('input', 'Intervenant', 'text', '', 'qx');
+					$formMatiere->input('textarea', 'Description', 'text', '', 'qx');
+					$formMatiere->input('input', 'Date', 'date', '', 'qx');
+					$formMatiere->submit();
+				?>
 
-		</form>
+			</form>
 		</div>
 	</div>
 	
 	<!-- Fin Formulaire -->
 		
-		<?php 
-			$nom = $_GET['Nom'];
-			$intervenant = $_GET['Intervenant'];
-			$description = $_GET['Description'];
-			$date = $_GET['Date'];
-			$tab = array($nom,$intervenant,$description,$date);
+	<?php 
+		$nom = $_GET['Nom'];
+		$intervenant = $_GET['Intervenant'];
+		$description = $_GET['Description'];
+		$date = $_GET['Date'];
+		$tab = array($nom,$intervenant,$description,$date);
+		$matiere = new Matiere($nom, $intervenant, $description, $date);
 
-			$matiere = new Matiere($nom, $intervenant, $description, $date);
-
-			$tabId = array('name','intervenant','description','date');
-			$tabVal = array($_GET['Nom'],$_GET['Intervenant'],$_GET['Description'],$_GET['Date']);
-			$co = new Connexion('mysql','localhost','test_projet','root','');
-			$co->connect();
-			$co->createEntry('test_matiere', $tabId,$tab);
-			$co->printTable('test_matiere');
-		?>
+		$tabId = array('name','intervenant','description','date');
+		$co = new Connexion('mysql','localhost','test_projet','root','');
+		$co->connect();
+		$co->createEntry('test_matiere', $tabId,$tab);
+		$co->printTable('test_matiere');
+	?>
 		
 		<!-- Bas de Page -->
 		
@@ -94,19 +90,19 @@
             <img src="./Image/logo2.png" class="footerimg2 dn">
 		</p>
 		<p>La Coding Factory by ITESCIA est une école du code créée à l'initiative d'<span>ITESCIA</span> , école de la <span>CCI Paris Ile-de-France.</span></p>
-		<div class="section_footer_colored">
-			<p class="mention_padding">
-                    <a href="#" class="linkfooter">Mention Légales</a> - <a href="#" class="linkfooter">Plan du Site</a> - <a href="#" class="linkfooter">Contact</a>
-            </p>
-			<p>Copyright 2018</p>
-			<p>
-                <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-twitter"></i>
-			    <i class="fab fa-linkedin-in"></i>
-                <i class="fab fa-instagram"></i>
-            </p>
+			<div class="section_footer_colored">
+				<p class="mention_padding">
+	                <a href="#" class="linkfooter">Mention Légales</a> - <a href="#" class="linkfooter">Plan du Site</a> - <a href="#" class="linkfooter">Contact</a>
+	            </p>
+				<p>Copyright 2018</p>
+				<p>
+	                <i class="fab fa-facebook-f"></i>
+	                <i class="fab fa-twitter"></i>
+				    <i class="fab fa-linkedin-in"></i>
+	                <i class="fab fa-instagram"></i>
+	            </p>
 
-        </div>
+	        </div>
     </footer>
     
     <!-- Fin Bas de Page-->

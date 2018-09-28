@@ -15,7 +15,6 @@
 		public function getAllInfo() {
 			$tabInfo = [$this->nomMatiere, $this->intervenant, $this->description, $this->date];
 			return $tabInfo;
-			echo '$tabInfo';
 		}
 	}
 ?>

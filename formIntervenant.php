@@ -33,8 +33,7 @@
 
     <!-- Fin Menu -->
 
-    <div class="trait">
-    </div>
+    <div class="trait"></div>
 
     <!-- Formulaire -->
     
@@ -53,8 +52,7 @@
 			?>
 				
         <div style="margin: 10px">
-            <form method="GET" action="formIntervenant.php">
-				
+            <form method="GET">	
 			    <?php 
 				    $formIntervenant->input('input', 'Nom', 'text', '', 'qx');
 				    $formIntervenant->input('input', 'Prenom', 'text', '', 'qx');
@@ -62,7 +60,7 @@
 				    $formIntervenant->input('input', 'Telephone', 'text', '', 'qx');
 				    $formIntervenant->submit();
 				?>
-			  </form> 
+			 </form> 
         </div>
     </div> 
 
@@ -75,7 +73,7 @@
 		$telephone = $_GET['Telephone'];
         $tab = array($nom,$prenom,$mail,$telephone);
 		$intervenant = new Intervenant($nom, $prenom, $mail, $telephone);
-        $tabId = array("name", "surname", "mail", "phone");
+        $tabId = array('name', 'surname', 'mail', 'phone');
         $co = new Connexion('mysql','localhost','test_projet','root','');
         $co->connect();
         $co->createEntry('test_intervenants',$tabId,$tab);
