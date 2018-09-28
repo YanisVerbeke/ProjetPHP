@@ -5,6 +5,7 @@
 		<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Antic+Slab" rel="stylesheet">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="./css/grid.css">
 		<title>Ajouter une matière</title>
 		<meta charset="UTF-8">
 	</head>
@@ -25,6 +26,9 @@
         <div class="menu menu1 surv surv:hover">
             <a href="formMatiere.php" class="menu3"><p class="menu2">MATIERE</p></a>
         </div>
+        <div class="menu menu1 surv surv:hover">
+            <a href="resume.php" class="menu3"><p class="menu2">RESUME</p></a>
+        </div>
     </div>
 
     <!-- Fin Menu -->
@@ -44,17 +48,18 @@
 			<?php 
 			require "Form.php";
 			require "Matiere.php";
+			require "connexion.php";
 			$formMatiere = new Form();
 			?>
 			
 		<div style="margin: 10px">
-		<form method="post">
+		<form method="GET">
 
 		<?php 
-		$formMatiere->input('input', 'Nom', 'text', '', 'class');
-		$formMatiere->input('input', 'Intervenant', 'text', '', 'class');
-		$formMatiere->input('textarea', 'Description', 'text', '', 'class');
-		$formMatiere->input('input', 'Date', 'date', '', 'class');
+		$formMatiere->input('input', 'Nom', 'text', '', 'qx');
+		$formMatiere->input('input', 'Intervenant', 'text', '', 'qx');
+		$formMatiere->input('textarea', 'Description', 'text', '', 'qx');
+		$formMatiere->input('input', 'Date', 'date', '', 'qx');
 		$formMatiere->submit();
 		?>
 
@@ -65,14 +70,20 @@
 	<!-- Fin Formulaire -->
 		
 		<?php 
-		if(!(isset($_POST))) {
-			$tab = $_POST;
-			$nom = $tab['Nom'];
-			$intervenant = $tab['Intervenant'];
-			$description = $tab['Descritpion'];
-			$date = $tab['Date'];
+			$nom = $_GET['Nom'];
+			$intervenant = $_GET['Intervenant'];
+			$description = $_GET['Description'];
+			$date = $_GET['Date'];
+			$tab = array($nom,$intervenant,$description,$date);
+
 			$matiere = new Matiere($nom, $intervenant, $description, $date);
-		}
+
+			$tabId = array('name','intervenant','description','date');
+			$tabVal = array($_GET['Nom'],$_GET['Intervenant'],$_GET['Description'],$_GET['Date']);
+			$co = new Connexion('mysql','localhost','test_projet','root','');
+			$co->connect();
+			$co->createEntry('test_matiere', $tabId,$tab);
+			$co->printTable('test_matiere');
 		?>
 		
 		<!-- Bas de Page -->

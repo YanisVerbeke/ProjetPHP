@@ -28,39 +28,36 @@ class Connexion
 		}
 		return $this->db;
 	}
-	public function printTable($table,$tabId){
+
+	public function printTable($table){
 		$buffer = $this->db->query('SELECT * FROM '.$table);
 		$tab = $buffer->fetchAll();
 
 		echo '<table>';
 		echo '<tr id="key">';
 
-		for ($i=0; $i < sizeof($tab[0])/2; $i += 1) {
+		for ($i=0; $i < sizeof($tab[0])/2; $i++) {
 			echo "<td>";
 			$key = array_search($tab[0][$i], $tab[0]);
 			echo $key;
 			echo "</td>";
 		}
 		echo '</tr>';
-		for($i = 0; $i < sizeof($tab[$i])/2; $i++){
-			if(!isset($tab[$i])){
-				break;
-			}else{
+		for($i = 0; $i < sizeof($tab); $i++){
 				if($i % 2 != 0){
 					$color = "grey";
 				}else{
 					$color = "white";
 				}
-
 				echo '<tr class="'.$color.'">';
-				for ($j=0; $j < sizeof($tab[$i])/2; $j++) {
+				for ($j=0; $j < sizeof($tab[0])/2; $j++) {
 					echo '<td class="case">'.$tab[$i][$j].'</td>';
 				}
 				echo '</tr>';
-			}
 		}
 		echo '</table>';
 	}
+
 	public function createEntry($table,$tabId,$tabVal)
 	{
 		$length = sizeof($tabId);
@@ -80,7 +77,7 @@ class Connexion
 				}else{
 					$request = $request."'".$tabVal[$i]."')";
 				}
-			} echo $request;
+			}
 			$this->db->query($request);
 		}else{
 			echo "Erreur, le nombre de clés ne correspond pas au nombre de valeurs";

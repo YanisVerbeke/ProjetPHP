@@ -6,12 +6,12 @@
 		private $tel;
 		private $site;
 
-		public function __construct($myNom, $myPrenom, $myMail, $myTel, $mySite) {
+		public function __construct($myNom, $myPrenom, $myMail, $myTel) {
 			$this->nom = $myNom;
 			$this->prenom = $myPrenom;
 			$this->mail = $myMail;
 			$this->tel = $myTel;
-			$this->site = $mySite;
+			//$this->site = $mySite;
 		}
 		public function getNom() {
 			return $this->nom;

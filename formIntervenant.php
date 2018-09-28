@@ -2,7 +2,8 @@
 <html>
     <head>
 		<meta charset="utf-8">    
-		<link rel="stylesheet" href="./css/formulaire.css" />   
+		<link rel="stylesheet" href="./css/formulaire.css" />  
+        <link rel="stylesheet" type="text/css" href="./css/grid.css"> 
 		<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Antic+Slab" rel="stylesheet">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -25,6 +26,9 @@
         <div class="menu menu1 surv surv:hover">
             <a href="formMatiere.php" class="menu3"><p class="menu2">MATIERE</p></a>
         </div>
+        <div class="menu menu1 surv surv:hover">
+            <a href="resume.php" class="menu3"><p class="menu2">RESUME</p></a>
+        </div>
     </div>
 
     <!-- Fin Menu -->
@@ -41,61 +45,42 @@
                 Formulaire 
             </h1>
         </div>
-				<?php 
+			<?php 
 				require "Form.php";
 				require "Intervenant.php";
+                require "connexion.php";
 				$formIntervenant = new Form();
-				?>
+			?>
 				
         <div style="margin: 10px">
-            <form method="post">
+            <form method="GET" action="formIntervenant.php">
 				
-				<?php 
-				$formIntervenant->input('input', 'Nom', 'text', '', 'qx');
-				$formIntervenant->input('input', 'Prenom', 'text', '', 'qx');
-				$formIntervenant->input('input', 'Mail', 'text', '', 'qx');
-				$formIntervenant->input('input', 'Telephone', 'text', '', 'qx');
-				$formIntervenant->input('input', 'Pontoise', 'checkbox', '1', 'qx');
-				$formIntervenant->input('input', 'Champeret', 'checkbox', '2', 'qx');
-				$formIntervenant->submit();
+			    <?php 
+				    $formIntervenant->input('input', 'Nom', 'text', '', 'qx');
+				    $formIntervenant->input('input', 'Prenom', 'text', '', 'qx');
+				    $formIntervenant->input('input', 'Mail', 'text', '', 'qx');
+				    $formIntervenant->input('input', 'Telephone', 'text', '', 'qx');
+				    $formIntervenant->submit();
 				?>
-			
-			
-            <!--        Nom :<br><br>
-                    <input type="text" name="firstname" value="" class="qx"><br><br>
-                    Prénom :<br><br>
-                    <input type="text" name="lastname" value="" class="qx"><br><br>
-                    Mail :<br><br>
-                    <input type="text" name="mail" value="" class="qx"><br><br>
-                    Téléphone :<br><br>
-                    <input type="text" name="tel" value="" class="qx"><br><br>
-                    Lieu d'intervention :<br><br>
-                    <input type="checkbox" name="int" value="cergy" checked>Pontoise
-                    <input type="checkbox" name="int" value="champeret" >Champeret<br><br><br>
-                    
-                    <input type="submit" name="send" value="Envoyer" class="button button1 button1:hover">
-              
-			  -->
-			  
-			  
 			  </form> 
         </div>
-
     </div> 
 
     <!-- Fin Formulaire -->
 	
 	<?php 
-		if(!(isset($_POST))) {
-			$tab = $_POST;
-			$nom = $tab['Nom'];
-			$prenom = $tab['Prenom'];
-			$mail = $tab['Mail'];
-			$telephone = $tab['Telephone'];
-
-			$intervenant = new Intervenenant($nom, $prenom, $mail, $telephone);
-		}
-		?>
+		$nom = $_GET['Nom'];
+		$prenom = $_GET['Prenom'];
+		$mail = $_GET['Mail'];
+		$telephone = $_GET['Telephone'];
+        $tab = array($nom,$prenom,$mail,$telephone);
+		$intervenant = new Intervenant($nom, $prenom, $mail, $telephone);
+        $tabId = array("name", "surname", "mail", "phone");
+        $co = new Connexion('mysql','localhost','test_projet','root','');
+        $co->connect();
+        $co->createEntry('test_intervenants',$tabId,$tab);
+        $co->printTable('test_intervenants');
+	?>
 
     <!-- Bas de Page -->
 		

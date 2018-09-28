@@ -2,5 +2,8 @@
 	border: solid 1px black;
 }
 .grey, #key{
-	background-color: lightgrey;
+	background-color: grey;
+}
+.white{
+	background-color: white;
 }
