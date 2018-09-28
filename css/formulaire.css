@@ -85,6 +85,13 @@ header h1{
     padding-bottom: 40px;
 }
 
+.bt1 {
+    text-decoration: none;
+    text-decoration-line: none;
+    text-align: center;
+    color: #e6e6e6;
+}
+
 #ui-datepicker-div{
 	background-color: gainsboro;
 	border-radius: 7px;
@@ -128,12 +135,12 @@ header h1{
 	border: 0px;
 }
 
-.button {
-    height: 30px;
-	width: 125px;
-	border: 10px;
-	border-radius: 7px;
-	background-color: #C9C9C9;
+.buton {
+    height: 50px;
+	width: 150px;
+	border: 0px solid #bfbfbf;
+	border-radius: 3px;
+	background-color: rgb(95, 95, 95);
 	
 }
 
