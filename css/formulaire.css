@@ -20,6 +20,12 @@ header h1{
 
 /* -- Bandeau -- */
 
+.logo {
+	background-image : url("./Images/logo2.png");
+	height : 35px;
+	margin-top : 6px;
+}
+
 .bd {
     margin-top: -10px;
     margin-bottom: -10px;
